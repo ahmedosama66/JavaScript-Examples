@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+	<script>
+		var log = console.log ; 
+
+		let nums = [1,2,3,4];
+
+		array map
+
+		let newNums = nums.map(function(item){
+			return item + 5 ;
+		})
+
+		let newNums = nums.map((item) => item + 5 );
+
+		log(newNums)
+
+		array map old fashion
+		let newNums = [];
+
+		for(let i = 0 ; i < nums.length ; i++){
+			let total = nums[i] + 5 ;
+			newNums.push(total)
+		}
+
+		log(newNums);
+
+		**********************************
+		array filter 
+		let nums = [1,2,3,4,20 , 30, 100];
+
+		let newNums = nums.filter(function(item){
+			return item > 4;
+		})
+
+		log(newNums)
+
+		**********************************
+
+		let names = ['ahmed' , 'ahmed' ,'ahmed'];
+
+		some -> some elements are ture
+		let newNames = names.some(item =>  item == 'sdsd');
+
+		every -> all elements are ture
+		let newNames = names.every(item => item == 'ahmed');
+
+		log(newNames)
+
+		search in array -> ture or false 
+		function arraySearch(array , target){
+
+			for(let i = 0 ; i < array.length ; i++){
+
+				if(array[i] == target){
+					return true ;
+				} 
+			}
+
+			return false ;
+
+		}
+
+		var x = arraySearch(names , 'sadasda');
+		log(x)
+		**************************
+
+			array reduce
+		 let nums = [1,2,3,4];
+
+		 let newNums = nums.reduce((start , accu)=> {
+		 	return start + accu ;
+
+		 })
+
+		 log(newNums)
+		 **************************
+	
+		 let num = 0 ;
+
+		 for(let i = 0 ; i < nums.length ; i++){
+
+		 	num += nums[i];
+		 }
+
+		 log(num)
+
+		  **************************
+
+		  let persons = [
+
+		  	{id : 1 , name : 'ahmed1'},
+		  	{id : 2 , name : 'ahmed2'},
+		  	{id : 3 , name : 'ahmed3'},
+		  	{id : 4 , name : 'ahmed4'},
+		  	{id : 5 , name : 'ahmed5'},
+		  	{id : 6 , name : 'ahmed6'},
+
+		  ];
+
+		  let onePerson = persons.find(item => {
+		  	return item.name == 'ahmed2' ;
+		  })
+
+		  log(onePerson)
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+</head>
+<body>
+	<form>
+		<input name="username" type="text" placeholder="name">
+		<input name="address" type="text" placeholder="address">
+		<input name="email" type="text" placeholder="email">
+		<input type="submit" value="click">
+	</form>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var log = console.log ;
+	var obj = {};
+	var placeholders = [];
+	$('input').not('input:last').each((index , item) => {
+		let plhold = $(item).attr('placeholder');
+		placeholders.push(plhold);
+	})
+
+	log(placeholders)
+
+	$('form').submit(function(e){
+		e.preventDefault();
+
+		$('input').not('input:last').each(function(index , item){
+
+			if($(item).val() != ''){
+
+				obj[$(item).attr('name')] = $(item).val();
+				$(item).css('border' ,'2px solid grey');
+				$(item).attr('placeholder' , placeholders[index])
+			} else {
+
+				$(item).css('border' ,'2px solid red');
+				$(item).attr('placeholder' , `${$(item).attr('name')} is Required`)
+			}
+			
+			
+
+		})
+
+		if(Object.keys(obj).length == 3 ){
+			$('form').trigger('reset');
+			$.post
+		}
+		
+	})
+
+
+
+</script>
+</body>
+</html>
